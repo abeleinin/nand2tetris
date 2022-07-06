@@ -13,24 +13,39 @@
 
 // Put your code here.
 
+(INIT)
+    @8192
+    D=A
+    @i
+    M=D
+
+(LOOP)	       
+	@i
+	M=M-1
+	D=M
+	@INIT
+	D;JLT         
+	@KBD	          
+	D=M
+	@WHITE		        
+	D;JEQ
+	@BLACK
+	0;JMP
+
+(WHITE)
+    @SCREEN
+    D=A
+    @i
+    A=D+M
+    M=0
     @LOOP
     0;JMP
 
-(LOOP)
-    @KBD
-    D=M
-    @POSITIVE
-    D;JGT
-
-    // Set screen white
-
-
-    @LOOP
-    0;JMP
-
-(POSITIVE)
-
-    // Set Screen black
-
+(BLACK)
+    @SCREEN
+    D=A
+    @i
+    A=D+M
+    M=-1
     @LOOP
     0;JMP
