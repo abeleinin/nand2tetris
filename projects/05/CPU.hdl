@@ -40,4 +40,10 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
+    Mux16(a=, b=, sel=, out=);
+    Mux16(a=, b=, sel=, out=);
+    ARegister(in=, load=, out=);
+    DRegister(in=, load=, out=);
+    ALU(x=, y=, zx=, nx=, zy=, ny=, f=, no=, out=, zr=, ng=);
+    PC(in=, load=, inc=, reset=, out=);
 }
